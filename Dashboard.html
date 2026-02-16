@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background:  #E8EDF2;  
+}
+
+/* Header */
+.header {
+  height: 64px;
+  padding: 0 40px;
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Bottom shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo Image */
+.logo img {
+  height: 32px;   /* adjust if needed */
+  width: auto;
+  cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #373C7D;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+/* Dashboard Wrapper */
+.dashboard-section {
+    padding: 40px 60px;
+}
+
+/* Welcome Text */
+.welcome-text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+/* Card Styling */
+.dashboard-card {
+    background: #f3f6f9;
+    border-radius: 8px;
+    padding: 45px 40px;      /* Increased height */
+    margin: 0 auto 30px;     /* Centered */
+    width: 90%;              /* Reduced width */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Left Content */
+.card-content {
+    width: 55%;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #000;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #5f7d95;
+    margin-bottom: 15px;
+}
+
+/* Button */
+.card-content button {
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 1px solid #c5ccd6;
+    background-color: #E8EDF2;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.card-content button:hover {
+    background-color: #e0e6ed;
+}
+
+/* Image Section */
+.card-image {
+    width: 45;
+}
+
+.card-image img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+/* FOOTER */
+.footer {
+  background: #3b3f78;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 100px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 16px;
+  opacity: 0.95;
+}
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (Portrait) - 768px and below */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+
+  .dashboard-section {
+    padding: 30px 30px;
+  }
+
+  .welcome-text {
+    font-size: 18px;
+    margin-bottom: 25px;
+  }
+
+  .dashboard-card {
+    width: 95%;
+    padding: 35px 30px;
+    margin-bottom: 25px;
+    flex-direction: column;
+  }
+
+  .card-content {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .card-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .card-content p {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+
+  .card-content button {
+    font-size: 15px;
+    padding: 9px 13px;
+  }
+
+  .card-image {
+    width: 100%;
+  }
+
+  .footer {
+    margin-top: 80px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (Large) - 480px and below */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 26px;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .login-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .dashboard-section {
+    padding: 25px 15px;
+  }
+
+  .welcome-text {
+    font-size: 17px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .dashboard-card {
+    width: 100%;
+    padding: 25px 20px;
+    margin-bottom: 20px;
+  }
+
+  .card-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .card-content p {
+    font-size: 14px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .card-content button {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .card-image img {
+    border-radius: 5px;
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 25px 15px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (Small) - 360px and below */
+@media screen and (max-width: 360px) {
+  .logo img {
+    height: 24px;
+  }
+
+  .dashboard-section {
+    padding: 20px 12px;
+  }
+
+  .welcome-text {
+    font-size: 16px;
+    margin-bottom: 18px;
+  }
+
+  .dashboard-card {
+    padding: 20px 15px;
+    margin-bottom: 18px;
+  }
+
+  .card-content h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+  }
+
+  .card-content p {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .card-content button {
+    font-size: 14px;
+    padding: 9px 10px;
+  }
+
+  .footer {
+    margin-top: 50px;
+  }
+}
+.nav .login-btn {
+  color: white;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+    <!-- Logo Image -->
+    <div class="logo">
+      <img src="logo.png" alt="G E-Portal Logo">
+    </div>
+
+    <nav class="nav">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="CitizenLogin.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- DASHBOARD SECTION -->
+   <section class="dashboard-section">
+
+    <div class="welcome-text">
+        Welcome, Priya Sharma
+    </div>
+
+    <!-- Card 1 -->
+    <div class="dashboard-card">
+        <div class="card-content">
+            <h3>Apply for New Ration Card</h3>
+            <p>Start your application for a new ration card. Ensure you have all required documents ready.</p>
+            <a href="ApplicantDetails.html">
+            <button>Apply Now</button>
+            </a>
+
+        </div>
+        <div class="card-image">
+            <img src="db1.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="dashboard-card">
+        <div class="card-content">
+            <h3>View/Edit Application</h3>
+            <p>Review or modify your existing application details. Make sure all information is accurate.</p>
+            <a href="EditApp.html">
+                <button>View/Edit</button>
+            </a>
+
+        </div>
+        <div class="card-image">
+            <img src="db2.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="dashboard-card">
+        <div class="card-content">
+            <h3>Upload Documents</h3>
+            <p>Upload necessary documents to support your application. Accepted formats: PDF, JPG.</p>
+            <a href="Upload.html">
+            <button>Upload</button>
+            </a>
+
+        </div>
+        <div class="card-image">
+            <img src="db3.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="dashboard-card">
+        <div class="card-content">
+            <h3>Check Application Status</h3>
+            <p>Track the progress of your application. Get real-time updates on its approval status.</p>
+            <a href="TrackingStatus.html">
+            <button>Check Status</button>
+            </a>
+
+        </div>
+        <div class="card-image">
+            <img src="db4.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="dashboard-card">
+        <div class="card-content">
+            <h3>Download Ration Card</h3>
+            <p>Download your approved ration card. Keep a digital copy for your records.</p>
+            <a href="DownloadCard.html">
+            <button>Download</button>
+            </a>
+
+        </div>
+        <div class="card-image">
+            <img src="db5.jpg" alt="">
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="dashboard-card">
+        <div class="card-content">
+            <h3>Profile</h3>
+            <p>Manage your personal information and settings. Update contact details and preferences.</p>
+            <a href="ManageProfile.html">
+            <button>Manage Profile</button>
+            </a>
+
+        </div>
+        <div class="card-image">
+            <img src="db6.jpg" alt="">
+        </div>
+    </div>
+
+</section>
+
+  <!-- FOOTER SECTION -->
+ <footer class="footer">
+  <div class="footer-links">
+    <a href="#">Terms of Service</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Accessibility</a>
+  </div>
+
+  <p class="footer-text">
+    © 2024 Ration Card Services. All rights reserved.
+  </p>
+</footer>
+</body>
+</html>
