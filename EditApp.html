@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Application</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background:  #E8EDF2;  
+}
+
+/* Header */
+.header {
+  height: 64px;
+  padding: 0 40px;
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Bottom shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo Image */
+.logo img {
+  height: 32px;   /* adjust if needed */
+  width: auto;
+  cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #373C7D;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* EDIT APP */
+/* Section */
+.edit-section {
+    padding: 40px 80px;
+}
+
+.edit-section h2 {
+    margin-bottom: 30px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* Form Group */
+ .form-group {
+    margin-bottom: 18px;
+    width: 70%;          /* same width as input */
+    margin-left: auto;
+    margin-right: auto;  /* center whole block */
+}
+
+.form-group label {
+    display: block;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #000;
+    text-align: left; 
+  
+}
+
+.form-group input {
+    width: 100%;        /* take full width of form-group */
+    padding: 14px 12px;
+    border-radius: 4px;
+    background-color: whitesmoke;
+    font-size: 13px;
+    cursor: pointer;
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+    border: 1px solid #ccc;  /* default */
+}
+
+/* Button */
+.submit-btn {
+    margin-top: 30px;
+    padding: 12px 16px;
+    background-color: #3f3d7a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-right: 200px;
+}
+/* FOOTER */
+.footer {
+  background: #3b3f78;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 100px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 16px;
+  opacity: 0.95;
+}
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (Portrait) - 768px and below */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+
+  .edit-section {
+    padding: 35px 40px;
+  }
+
+  .edit-section h2 {
+    font-size: 19px;
+    margin-bottom: 25px;
+    text-align: center;
+  }
+
+  .form-group {
+    width: 85%;
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    margin-right: 0;
+    float: none;
+    display: block;
+    margin: 30px auto 0;
+    padding: 11px 15px;
+    font-size: 15px;
+  }
+
+  .footer {
+    margin-top: 80px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (Large) - 480px and below */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 26px;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .login-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .edit-section {
+    padding: 30px 20px;
+  }
+
+  .edit-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+
+  .form-group input {
+    padding: 11px 10px;
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px 15px;
+    font-size: 15px;
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 25px 15px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (Small) - 360px and below */
+@media screen and (max-width: 360px) {
+  .logo img {
+    height: 24px;
+  }
+
+  .edit-section {
+    padding: 25px 15px;
+  }
+
+  .edit-section h2 {
+    font-size: 17px;
+    margin-bottom: 18px;
+  }
+
+  .form-group {
+    margin-bottom: 14px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+  }
+
+  .form-group input {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .submit-btn {
+    padding: 11px 14px;
+    font-size: 14px;
+    margin-top: 20px;
+  }
+
+  .footer {
+    margin-top: 50px;
+  }
+}
+.nav .login-btn {
+  color: white;
+}
+</style>
+</head>
+<body>
+     <header class="header">
+    <!-- Logo Image -->
+    <div class="logo">
+      <img src="logo.png" alt="G E-Portal Logo">
+    </div>
+
+    <nav class="nav">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="CitizenLogin.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- EDIT APPLICATION -->
+   
+   <section class="edit-section">
+    <h2>Edit Application</h2>
+
+    <div class="form-group">
+        <label>Application Number</label>
+        <input type="text" id="appNo">
+    </div>
+
+    <div class="form-group">
+        <label>Applicant Name</label>
+        <input type="text" id="name">
+    </div>
+
+    <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="text" id="dob">
+    </div>
+
+    <div class="form-group">
+        <label>Gender</label>
+        <input type="text" id="gender">
+    </div>
+
+    <div class="form-group">
+        <label>Address</label>
+        <input type="text" id="address">
+    </div>
+
+    <div class="form-group">
+        <label>Aadhar Number</label>
+        <input type="text" id="aadhar">
+    </div>
+
+    <div class="form-group">
+        <label>Mobile Number</label>
+        <input type="text" id="mobile">
+    </div>
+
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" id="email">
+    </div>
+
+    <div class="form-group">
+        <label>Family Members</label>
+        <input type="text" id="family">
+    </div>
+
+    <div class="form-group">
+        <label>Income</label>
+        <input type="text" id="income">
+    </div>
+
+    <div class="form-group">
+        <label>Occupation</label>
+        <input type="text" id="occupation">
+    </div>
+
+    <div class="form-group">
+        <label>Category</label>
+        <input type="text" id="category">
+    </div>
+
+    <div class="form-group">
+        <label>Documents</label>
+        <input type="text" id="documents">
+    </div>
+
+    <button class="submit-btn" id="resubmitBtn">Resubmit Application</button>
+
+</section>
+
+  <!-- FOOTER SECTION -->
+ <footer class="footer">
+  <div class="footer-links">
+    <a href="#">Terms of Service</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Accessibility</a>
+  </div>
+
+  <p class="footer-text">
+    © 2024 Ration Card Services. All rights reserved.
+  </p>
+</footer>
+<script>
+
+// Data Object
+const formData = {
+    appNo: "UCS200605789564",
+    name: "Priya Sharma",
+    dob: "26-06-1997",
+    gender: "Female",
+    address: "1/205, middlestreet, masarapatti, masarapatti(po), ettayapuram(tk), thoothugudi(dist), pincode-626202",
+    aadhar: "6363 5686 9568",
+    mobile: "3662598679",
+    email: "priyasharma123@gmail.com",
+    family: "4",
+    income: "170000",
+    occupation: "coolie",
+    category: "General",
+    documents: "Uploaded"
+};
+
+// Auto fill on click
+Object.keys(formData).forEach(id => {
+    const field = document.getElementById(id);
+
+    field.addEventListener("focus", function () {
+        if (this.value === "") {
+            this.value = formData[id];
+        }
+    });
+});
+const resubmitBtn = document.getElementById("resubmitBtn");
+const inputs = document.querySelectorAll(".form-group input");
+
+resubmitBtn.addEventListener("click", function () {
+
+    let isValid = true;
+
+    inputs.forEach(function (input) {
+        if (input.value.trim() === "") {
+            isValid = false;
+        }
+    });
+
+    if (!isValid) {
+        alert("Please fill all fields before submitting.");
+    } else {
+        alert("Submitted Successfully");
+    }
+
+});
+
+</script>
+</body>
+</html>

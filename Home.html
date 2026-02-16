@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #ffffff;
+}
+
+/* Header */
+.header {
+  height: 64px;
+  padding: 0 40px;
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Bottom shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo Image */
+.logo img {
+  height: 32px;   /* adjust if needed */
+  width: auto;
+  cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #373C7D;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+/* Hero Section */
+.hero-section {
+  position: relative;
+  margin: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero-section img {
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.01);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+
+.hero-overlay h1 {
+  font-size: 50px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  margin-top: 100px;
+}
+
+.hero-overlay p {
+  font-size: 22px;
+  margin-bottom: 50px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.primary-btn {
+  background: #373C7D;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  background: #ffffff;
+  color: black;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Content Section */
+.content-section {
+  width: 100%;
+  background: #eef2f5;
+  padding: 40px 60px;
+}
+
+
+.content-section h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.content-section p {
+  font-size: 20px;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  
+}
+
+/* Center Button */
+.center-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+/* FOOTER */
+.footer {
+  background: #373C7D;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 16px;
+  opacity: 0.95;
+}
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (Portrait) - 768px and below */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+
+  .hero-section {
+    margin: 15px;
+  }
+
+  .hero-section img {
+    height: 450px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 40px;
+    margin-top: 80px;
+    margin-bottom: 8px;
+  }
+
+  .hero-overlay p {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 11px 18px;
+  }
+
+  .content-section {
+    padding: 35px 40px;
+  }
+
+  .content-section h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+  }
+
+  .content-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .center-btn .primary-btn {
+    width: auto;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 16px;
+  }
+
+  .footer-text {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (Large) - 480px and below */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 26px;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .login-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .hero-section {
+    margin: 10px;
+  }
+
+  .hero-section img {
+    height: 400px;
+  }
+
+  .hero-overlay {
+    padding: 15px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 32px;
+    margin-top: 60px;
+    margin-bottom: 8px;
+  }
+
+  .hero-overlay p {
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+
+  .hero-buttons {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    font-size: 15px;
+    padding: 11px 16px;
+  }
+
+  .content-section {
+    padding: 30px 20px;
+  }
+
+  .content-section h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .content-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .center-btn {
+    margin-top: 15px;
+  }
+
+  .center-btn .primary-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 11px 16px;
+  }
+
+  .footer {
+    padding: 25px 15px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (Small) - 360px and below */
+@media screen and (max-width: 360px) {
+  .logo img {
+    height: 24px;
+  }
+
+  .hero-section {
+    margin: 8px;
+  }
+
+  .hero-section img {
+    height: 350px;
+  }
+
+  .hero-overlay h1 {
+    font-size: 28px;
+    margin-top: 50px;
+  }
+
+  .hero-overlay p {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .content-section {
+    padding: 25px 15px;
+  }
+
+  .content-section h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+
+  .content-section p {
+    font-size: 15px;
+    margin-bottom: 16px;
+  }
+
+  .center-btn .primary-btn {
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+.nav .login-btn {
+  color: white;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+    <!-- Logo Image -->
+    <div class="logo">
+      <img src="logo.png" alt="G E-Portal Logo">
+    </div>
+
+    <nav class="nav">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="CitizenLogin.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section">
+  <img src="hero.jpg" alt="Government Building">
+
+  <div class="hero-overlay">
+    <h1>Ration Card Services Portal</h1>
+    <p>Apply, track and manage your ration card online.</p>
+
+    <div class="hero-buttons">
+      <a href="NewuseReg.html" target="_blank">
+    <button class="primary-btn">Apply for New Ration Card</button>
+      </a>
+      <a href="TrackingStatus.html" target="_blank">
+        <button class="secondary-btn">Check Application Status</button>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="content-section">
+  <h2>Eligibility and Required Documents</h2>
+  <p>
+    To be eligible for a ration card, applicants must be residents of the state and not possess any existing ration card.
+    Required documents typically include proof of residence (e.g., Aadhaar card, voter ID), proof of identity (e.g., PAN card, passport),
+    and a recent passport-sized photograph. Specific requirements may vary, so please refer to the detailed guidelines for your region.
+  </p>
+
+  <h2>Contact Us</h2>
+  <p>
+    For any queries or assistance, please contact our helpline at
+    <strong>1800-123-4567</strong> or email us at
+    <strong>support@rationcard.gov.in</strong>.
+  </p>
+
+  <div class="center-btn">
+   <a href="NewuseReg.html" target="_blank">
+      <button class="primary-btn">Apply for New Ration Card</button>
+    </a>
+ </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-links">
+    <a href="#">Terms of Service</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Accessibility</a>
+  </div>
+
+  <p class="footer-text">
+    © 2024 Ration Card Services. All rights reserved.
+  </p>
+</footer>
+
+</body>
+</html>

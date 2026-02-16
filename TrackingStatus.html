@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tracking Status</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background:  #E8EDF2;  
+}
+
+/* Header */
+.header {
+  height: 64px;
+  padding: 0 40px;
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Bottom shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo Image */
+.logo img {
+  height: 32px;   /* adjust if needed */
+  width: auto;
+  cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #373C7D;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+/* TRACK SECTION */
+/* Track Section Styling */
+.track-section {
+    background-color: #E8EDF2;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.track-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.track-container h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #222;
+}
+
+/* Form Groups */
+.form-group {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 15px;
+    color: #000;
+    font-size: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    background-color: #f8fafc;
+    cursor: pointer;
+}
+
+.form-group input:focus {
+    border-color: #4c51bf;
+    background-color: #fff;
+}
+
+/* Button */
+.status-btn {
+    margin-top: 20px;
+    padding: 12px 40px;
+    background-color: #373C7D;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.status-btn:hover {
+    background-color: #2e2c64;
+}
+
+/* Help Text */
+.help-text {
+    margin-top: 35px;
+    font-size: 16px;
+    color: #5b7c9d;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.15);
+}
+a{
+  text-decoration: none;
+}
+
+
+/* FOOTER */
+.footer {
+  background: #3b3f78;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 100px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 16px;
+  opacity: 0.95;
+}
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (Portrait) - 768px and below */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+
+  .track-section {
+    padding: 60px 20px;
+  }
+
+  .track-container {
+    max-width: 500px;
+  }
+
+  .track-container h2 {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  .form-group {
+    margin-bottom: 25px;
+  }
+
+  .form-group label {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .form-group input {
+    padding: 13px 15px;
+    font-size: 14px;
+  }
+
+  .status-btn {
+    padding: 11px 35px;
+    font-size: 14px;
+  }
+
+  .help-text {
+    margin-top: 30px;
+    font-size: 15px;
+  }
+
+  .footer {
+    margin-top: 80px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (Large) - 480px and below */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 26px;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .login-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .track-section {
+    padding: 50px 15px;
+  }
+
+  .track-container {
+    max-width: 100%;
+  }
+
+  .track-container h2 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .form-group {
+    margin-bottom: 22px;
+  }
+
+  .form-group label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .form-group input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .status-btn {
+    width: 100%;
+    padding: 13px 30px;
+    font-size: 15px;
+    margin-top: 18px;
+  }
+
+  .help-text {
+    margin-top: 25px;
+    font-size: 14px;
+    padding: 0 10px;
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 25px 15px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (Small) - 360px and below */
+@media screen and (max-width: 360px) {
+  .logo img {
+    height: 24px;
+  }
+
+  .track-section {
+    padding: 40px 12px;
+  }
+
+  .track-container h2 {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+
+  .form-group input {
+    padding: 11px 13px;
+    font-size: 13px;
+  }
+
+  .status-btn {
+    padding: 12px 25px;
+    font-size: 14px;
+    margin-top: 15px;
+  }
+
+  .help-text {
+    margin-top: 20px;
+    font-size: 13px;
+  }
+
+  .footer {
+    margin-top: 50px;
+  }
+}
+.nav .login-btn {
+  color: white;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+    <!-- Logo Image -->
+    <div class="logo">
+      <img src="logo.png" alt="G E-Portal Logo">
+    </div>
+
+    <nav class="nav">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="CitizenLogin.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- TRACK APPLN -->
+   <!-- Track Application Section -->
+<section class="track-section">
+    <div class="track-container">
+        <h2>Track Your Application Status</h2>
+
+        <div class="form-group">
+            <label>Application Number</label>
+            <input type="text" id="appNumber" placeholder="Enter your application number">
+        </div>
+
+        <div class="form-group">
+            <label>Registered Mobile Number</label>
+            <input type="text" id="mobileNumber" placeholder="Enter your registered mobile number">
+        </div>
+
+        <a href="DownloadCard.html" class="status-btn" id="viewStatusBtn">
+        View Status
+        </a>
+
+
+        <p class="help-text">
+            For any queries, please contact our helpline at 1800-123-4567
+        </p>
+    </div>
+</section>
+
+
+  <!-- FOOTER SECTION -->
+ <footer class="footer">
+  <div class="footer-links">
+    <a href="#">Terms of Service</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Accessibility</a>
+  </div>
+
+  <p class="footer-text">
+    © 2024 Ration Card Services. All rights reserved.
+  </p>
+</footer>
+<script>
+    const appInput = document.getElementById("appNumber");
+    const mobileInput = document.getElementById("mobileNumber");
+    const viewBtn = document.getElementById("viewStatusBtn");
+
+    // Auto fill on click
+    appInput.addEventListener("focus", function () {
+        if (this.value === "") {
+            this.value = "UCS20060545875621";
+        }
+    });
+
+    mobileInput.addEventListener("focus", function () {
+        if (this.value === "") {
+            this.value = "9365875485";
+        }
+    });
+
+    // Button click validation
+    viewBtn.addEventListener("click", function () {
+
+        if (appInput.value.trim() === "" || mobileInput.value.trim() === "") {
+            alert("Please fill all fields before viewing status.");
+            return;
+        }
+
+        // If filled → do your action here
+        // Example:
+        // window.location.href = "status.html";
+        console.log("Form Submitted Successfully");
+    });
+</script>
+
+</body>
+</html>
