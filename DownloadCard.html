@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Rationcard Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background:  #E8EDF2;  
+}
+
+/* Header */
+.header {
+  height: 64px;
+  padding: 0 40px;
+  background: #f8fbff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Bottom shadow */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Logo Image */
+.logo img {
+  height: 32px;   /* adjust if needed */
+  width: auto;
+  cursor: pointer;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+/* Login Button */
+.login-btn {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 6px;
+  background: #373C7D;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+/* DOWNLOAD */
+/* SECTION */
+.download-section{
+    padding:60px 20px;
+    text-align:center;
+}
+
+.download-section h2{
+    font-size:28px;
+    font-weight:600;
+    margin-bottom:40px;
+    color:#1c1c1c;
+    text-align: left;
+    margin-left: 200px;
+}
+
+/* CONTENT WRAPPER */
+.download-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;   /* ⭐ center horizontally */
+    gap:60px;
+    max-width:1000px;         /* limit width */
+    margin:0 auto;            /* ⭐ center the container */
+}
+
+
+/* IMAGE CARD */
+.card-preview{
+    background:#e5d5b8;
+    padding:40px;
+    border-radius:12px;
+}
+
+.card-preview img{
+    width:320px;
+    height:auto;
+    border-radius:8px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* DETAILS */
+.application-details{
+    max-width:400px;
+    text-align:left;   /* keep details aligned properly */
+}
+
+.application-details h4{
+    font-size:16px;
+    color:#6b8bb0;
+    margin-bottom:10px;
+}
+
+.application-details p{
+    margin-bottom:8px;
+    font-size:16px;
+    color:#333;
+}
+
+.application-details span{
+    font-weight:600;
+}
+
+.status-box{
+    display:inline-block;
+    margin-top:12px;
+    padding:8px 14px;
+    background:#f1f3f6;
+    border-radius:8px;
+    font-size:14px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* BUTTONS */
+.button-group{
+    margin-top:80px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+}
+
+.download-btn{
+    background:#3f3d7a;
+    color:#fff;
+    border:none;
+    padding:12px 40px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 6px 14px rgba(0,0,0,0.15);
+}
+.download-message{
+    display:none;                 /* hidden initially */
+    margin:40px auto 0;
+    background:black;
+    color:white;
+    padding:20px 40px;
+    border-radius:18px;
+    font-size:24px;
+    font-weight:600;
+    text-align:center;
+    width:600px;
+}
+
+
+.print-btn{
+    background:#e2e5ea;
+    color:#222;
+    border:none;
+    padding:12px 40px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    box-shadow:0 6px 14px rgba(0,0,0,0.15);
+}
+
+.download-btn:hover{
+    opacity:0.9;
+}
+
+.print-btn:hover{
+    opacity:0.9;
+}
+/* FOOTER */
+.footer {
+  background: #3b3f78;
+  padding: 30px 20px;
+  text-align: center;
+  color: #ffffff;
+  margin-top: 100px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto 20px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-text {
+  font-size: 16px;
+  opacity: 0.95;
+}
+/* ========================================
+   MEDIA QUERIES - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablet (Portrait) - 768px and below */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: auto;
+    min-height: 64px;
+    flex-wrap: wrap;
+  }
+
+  .logo img {
+    height: 28px;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .nav a {
+    font-size: 18px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 6px 14px;
+  }
+
+  .download-section {
+    padding: 50px 20px;
+  }
+
+  .download-section h2 {
+    font-size: 26px;
+    margin-left: 0;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  .download-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .card-preview {
+    padding: 30px;
+  }
+
+  .card-preview img {
+    width: 280px;
+  }
+
+  .application-details {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .application-details h4 {
+    font-size: 15px;
+  }
+
+  .application-details p {
+    font-size: 15px;
+  }
+
+  .status-box {
+    font-size: 13px;
+    padding: 7px 12px;
+  }
+
+  .button-group {
+    margin-top: 60px;
+    gap: 20px;
+  }
+
+  .download-btn,
+  .print-btn {
+    padding: 11px 35px;
+    font-size: 15px;
+  }
+
+  .download-message {
+    width: 500px;
+    padding: 18px 35px;
+    font-size: 22px;
+  }
+
+  .footer {
+    margin-top: 80px;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .footer-links a {
+    font-size: 15px;
+  }
+
+  .footer-text {
+    font-size: 14px;
+  }
+}
+
+/* Mobile (Large) - 480px and below */
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 12px 15px;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 26px;
+  }
+
+  .nav {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+
+  .nav a {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+  }
+
+  .login-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .download-section {
+    padding: 40px 15px;
+  }
+
+  .download-section h2 {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .download-container {
+    gap: 30px;
+  }
+
+  .card-preview {
+    padding: 25px;
+    width: 100%;
+  }
+
+  .card-preview img {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .application-details h4 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .application-details p {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+
+  .status-box {
+    font-size: 13px;
+    padding: 7px 12px;
+    margin-top: 10px;
+  }
+
+  .button-group {
+    margin-top: 50px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .download-btn,
+  .print-btn {
+    width: 100%;
+    padding: 12px 30px;
+    font-size: 15px;
+  }
+
+  .download-message {
+    width: 90%;
+    max-width: 350px;
+    padding: 16px 25px;
+    font-size: 20px;
+    margin-top: 30px;
+  }
+
+  .footer {
+    margin-top: 60px;
+    padding: 25px 15px;
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-text {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (Small) - 360px and below */
+@media screen and (max-width: 360px) {
+  .logo img {
+    height: 24px;
+  }
+
+  .download-section {
+    padding: 30px 12px;
+  }
+
+  .download-section h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .card-preview {
+    padding: 20px;
+  }
+
+  .card-preview img {
+    max-width: 220px;
+  }
+
+  .application-details h4 {
+    font-size: 13px;
+  }
+
+  .application-details p {
+    font-size: 13px;
+  }
+
+  .status-box {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  .button-group {
+    margin-top: 40px;
+    gap: 12px;
+  }
+
+  .download-btn,
+  .print-btn {
+    padding: 11px 25px;
+    font-size: 14px;
+  }
+
+  .download-message {
+    padding: 14px 20px;
+    font-size: 18px;
+  }
+
+  .footer {
+    margin-top: 50px;
+  }
+}
+.nav .login-btn {
+  color: white;
+}
+</style>
+</head>
+<body>
+    <header class="header">
+    <!-- Logo Image -->
+    <div class="logo">
+      <img src="logo.png" alt="G E-Portal Logo">
+    </div>
+
+    <nav class="nav">
+      <a href="Home.html">Home</a>
+      <a href="About.html">About</a>
+      <a href="Contact.html">Contact</a>
+      <a href="CitizenLogin.html" class="login-btn">Login</a>
+    </nav>
+  </header>
+
+  <!-- DOWNLOAD CARD -->
+   <section class="download-section">
+
+<h2>Download Ration Card</h2>
+
+<div class="download-container">
+
+    <!-- LEFT IMAGE -->
+    <div class="card-preview">
+        <img src="ration.jpg" alt="Ration Card">
+    </div>
+
+    <!-- RIGHT DETAILS -->
+    <div class="application-details">
+        <h4>Application Status</h4>
+
+        <p><span>Application Number:</span> RC2024001234</p>
+        <p><span>Applicant Name:</span> Priya Sharma</p>
+        <p><span>Application Date:</span> 2024-07-20</p>
+
+        <div class="status-box">
+            Current Status: Approved
+        </div>
+    </div>
+
+</div>
+
+<!-- BUTTONS -->
+<div class="button-group">
+    <button class="download-btn">Download PDF</button>
+    <button class="print-btn">Print</button>
+</div>
+<div id="downloadMessage" class="download-message">
+    Download Successfully!!!!
+</div>
+
+
+</section>
+
+  <!-- FOOTER SECTION -->
+ <footer class="footer">
+  <div class="footer-links">
+    <a href="#">Terms of Service</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Accessibility</a>
+  </div>
+
+  <p class="footer-text">
+    © 2024 Ration Card Services. All rights reserved.
+  </p>
+</footer>
+<script>
+const downloadBtn = document.querySelector(".download-btn");
+const messageBox = document.getElementById("downloadMessage");
+
+downloadBtn.addEventListener("click", function(){
+
+    messageBox.style.display = "block";
+
+    // Optional: auto hide after 3 seconds
+    setTimeout(function(){
+        messageBox.style.display = "none";
+    }, 3000);
+
+});
+</script>
+
+</body>
+</html>
